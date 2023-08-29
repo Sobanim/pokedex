@@ -16,7 +16,7 @@ const usePokemons = () => {
 
     useEffect( () => {
         fetchPokemon()
-    }, [])
+    }, [fetchPokemon])
 
     return {
         pokemons
