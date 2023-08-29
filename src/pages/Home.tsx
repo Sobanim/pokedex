@@ -1,6 +1,10 @@
+import usePokemons from "../hooks/usePokemons";
+import PokemonList from "../components/PokemonList";
+
 const Home = () => {
+    const {pokemons} = usePokemons()
     return (
-        <div>Home page</div>
+        <PokemonList pokemons={pokemons} />
     )
 }
 
