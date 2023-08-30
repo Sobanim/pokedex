@@ -12,7 +12,8 @@ const usePokemons = () => {
             const result = await httpClient.get<PokemonListResponce>(nextUrl)
             if (result?.data?.results) {
                 const listPokemons = result.data.results.map (p => indxPokemonToListPokemon(p))
-                setPokemons(listPokemons)
+                setPokemons([...pokemons, ...listPokemons])
+                setNextUrl(result.data.next)
             }
         }
     }
@@ -31,10 +32,12 @@ const usePokemons = () => {
 
     useEffect( () => {
         fetchPokemon()
-    }, [fetchPokemon])
+    }, [])
 
     return {
-        pokemons
+        pokemons,
+        fetchNextPage: fetchPokemon,
+        hasMorePokemon: !! nextUrl
     }
 }
 
