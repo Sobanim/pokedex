@@ -1,5 +1,7 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import theme from "./theme";
 
 
 const router = createBrowserRouter([
@@ -10,7 +12,10 @@ const router = createBrowserRouter([
 ])
 const App = () => {
   return (
-    <RouterProvider router={router} />
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <RouterProvider router={router} />
+      </ThemeProvider>
   );
 }
 
