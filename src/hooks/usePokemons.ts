@@ -23,7 +23,7 @@ const usePokemons = () => {
         const listPokemon: ListPokemon = {
             name: indexedPokemon.name,
             url: indexedPokemon.url,
-            image: `${POKEMON_IMG_BASE_URL}/${pokedexNumber}.gif`,
+            image: `${POKEMON_IMG_BASE_URL}/${pokedexNumber}.svg`,
             pokedexNumber: pokedexNumber
         }
         return listPokemon
