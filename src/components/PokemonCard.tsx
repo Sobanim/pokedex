@@ -21,10 +21,10 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   return (
         <Card sx={{backgroundColor: pokemonColor, width: '100%'}}>
             <CardActionArea>
-                <CardMedia component={"img"} image={pokemon.image} title={pokemon.name} sx={{height: 100, objectFit: "contain"}}/>
+                <CardMedia component={"img"} image={pokemon.image} title={pokemon.name} sx={{height: 100, objectFit: "contain", marginTop: '20px'}}/>
                 <CardContent>
                     <Box sx={{display: 'flex', justifyContent: 'center', color: 'white'}}>
-                        <Typography sx={{textTransform: 'capitalize', fontFamily: 'Pokemon Solid', color: 'white', letterSpacing: '3px'}}>{pokemon.name}</Typography>
+                        <Typography className={'text-stroke1'} sx={{textTransform: 'capitalize', fontFamily: 'Pokemon Solid', color: 'white', letterSpacing: '3px'}}>{pokemon.name}</Typography>
                     </Box>
                 </CardContent>
             </CardActionArea>

@@ -6,7 +6,7 @@ const Home = () => {
     const {pokemons, hasMorePokemon, fetchNextPage} = usePokemons()
     return (
         <Container>
-            <Typography variant={'h2'} component={'h2'} sx={{textAlign: 'center', fontFamily: 'Pokemon Hollow'}}>
+            <Typography className={'text-stroke3'} variant={'h1'} component={'h1'} sx={{color: '#f4dc26'}}>
                 Pokedex
             </Typography>
 

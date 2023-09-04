@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: url('../../public/font/PokemonSolidNormal.woff2') format('woff2'),
+  url('../../public/font/PokemonSolidNormal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.text-stroke1 {
+  -webkit-text-stroke: 1px black;
+}
+
+.text-stroke3 {
+  -webkit-text-stroke: 3px black;
+}
+
+
+
