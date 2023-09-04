@@ -24,7 +24,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
                 <CardMedia component={"img"} image={pokemon.image} title={pokemon.name} sx={{height: 100, objectFit: "contain"}}/>
                 <CardContent>
                     <Box sx={{display: 'flex', justifyContent: 'center', color: 'white'}}>
-                        <Typography sx={{textTransform: 'capitalize'}}>{pokemon.name}</Typography>
+                        <Typography sx={{textTransform: 'capitalize', fontFamily: 'Pokemon Solid', color: 'white', letterSpacing: '3px'}}>{pokemon.name}</Typography>
                     </Box>
                 </CardContent>
             </CardActionArea>
