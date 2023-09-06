@@ -1,8 +1,10 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import usePokemon from "../hooks/usePokemon";
-import {Box, Container, Grid} from "@mui/material";
+import {Box, Button, Container, Grid} from "@mui/material";
 import PokemonAvatar from "./PokemonAvatar";
+import PokemomBasicInfo from "./PokemomBasicInfo";
+import PokemonStats from "./PokemonStats";
 
 const PokemonDetail = () => {
     let {pokemonName} = useParams()
@@ -11,19 +13,30 @@ const PokemonDetail = () => {
     return (
         <div>
             <Container>
-                <Grid container flexDirection={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={1}>
-                    <Grid container flexDirection={"column"} alignItems={"center"} justifyContent={"center"} spacing={2}>
+                <Grid container flexDirection={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={2}>
+                    <Grid container alignItems={"center"} justifyContent={"center"} spacing={2}>
                         {isLoading ? (
                             <Box>Loading...</Box>
                         ): pokemon ? (
                             <>
-                                <Grid item xs={12} sm={6}>
+                                <Grid item xs={12} sm={6} p={4}>
                                     <PokemonAvatar pokemon={pokemon} />
+                                </Grid>
+                                <Grid item xs={12} sm={6} p={4}>
+                                    <PokemomBasicInfo pokemon={pokemon} />
+                                </Grid>
+                                <Grid item xs={12} sm={6} p={4}>
+                                    <PokemonStats pokemon={pokemon} />
                                 </Grid>
                             </>
                         ) : (
                             <Box>Pokemon not found</Box>
                         )}
+                    </Grid>
+                    <Grid item>
+                        <Button component={Link} to={"/"} variant={"contained"}>
+                            Go Back
+                        </Button>
                     </Grid>
                 </Grid>
             </Container>
