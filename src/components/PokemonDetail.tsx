@@ -12,7 +12,7 @@ const PokemonDetail = () => {
 
     return (
         <div>
-            <Container>
+            <Container sx={{letterSpacing: '2px'}}>
                 <Grid container flexDirection={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={2}>
                     <Grid container alignItems={"center"} justifyContent={"center"} spacing={2}>
                         {isLoading ? (

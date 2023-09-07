@@ -1,6 +1,6 @@
 import usePokemons from "../hooks/usePokemons";
 import PokemonList from "../components/PokemonList";
-import {Button, Container, Typography} from "@mui/material";
+import {Box, Button, Container, Typography} from "@mui/material";
 
 const Home = () => {
     const {pokemons, hasMorePokemon, fetchNextPage} = usePokemons()
@@ -11,12 +11,14 @@ const Home = () => {
             </Typography>
 
             <PokemonList pokemons={pokemons} />
-            {hasMorePokemon ?
-                (
-                <Button variant={"contained"} onClick={fetchNextPage}>
-                    Load more Pokemons
-                </Button>
-                ): null}
+            <Box sx={{ textAlign: 'center', margin: '20px 0' }}>
+                {hasMorePokemon ?
+                    (
+                        <Button variant={"contained"} onClick={fetchNextPage}>
+                            Load more Pokemons
+                        </Button>
+                    ): null}
+            </Box>
         </Container>
     )
 }
