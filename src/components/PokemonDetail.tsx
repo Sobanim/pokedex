@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, useParams} from "react-router-dom";
 import usePokemon from "../hooks/usePokemon";
 import {Box, Button, Container, Grid} from "@mui/material";
@@ -9,6 +9,10 @@ import PokemonStats from "./PokemonStats";
 const PokemonDetail = () => {
     let {pokemonName} = useParams()
     const {pokemon, isLoading} = usePokemon({pokemonName})
+
+    useEffect(() => {
+        document.title = `${pokemon?.name} - Pokedex`
+    })
 
     return (
         <div>
