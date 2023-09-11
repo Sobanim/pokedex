@@ -16,20 +16,18 @@ const PokemonDetail = () => {
 
     return (
         <div>
-            <Container sx={{letterSpacing: '2px'}}>
+            <Container sx={{letterSpacing: '2px'}} maxWidth={"lg"} disableGutters>
                 <Grid container flexDirection={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={2}>
                     <Grid container alignItems={"center"} justifyContent={"center"} spacing={2}>
                         {isLoading ? (
                             <Box>Loading...</Box>
                         ): pokemon ? (
                             <>
-                                <Grid item xs={12} sm={6} p={4}>
+                                <Grid item xs={12} sm={4} p={2}>
                                     <PokemonAvatar pokemon={pokemon} />
                                 </Grid>
-                                <Grid item xs={12} sm={6} p={4}>
+                                <Grid item xs={12} sm={6} p={0}>
                                     <PokemomBasicInfo pokemon={pokemon} />
-                                </Grid>
-                                <Grid item xs={12} sm={6} p={4}>
                                     <PokemonStats pokemon={pokemon} />
                                 </Grid>
                             </>

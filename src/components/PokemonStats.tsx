@@ -10,7 +10,7 @@ const PokemonStats = ({pokemon}: PokemonStatsProps) => {
             <Grid container justifyContent={"center"} spacing={2}>
                 <Grid item>
                     { pokemon ? (
-                        <Table size={"small"}>
+                        <Table size={"small"} sx={{marginTop: '20px'}}>
                             <TableHead>
                                 <TableRow>
                                     {pokemon.stats.map((stat) => {
