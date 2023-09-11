@@ -2,11 +2,11 @@ import React from 'react';
 import {DetailPokemon} from "../interfaces/pokemon.interfaces";
 import {Card, CardContent, CardMedia, Stack, Typography} from "@mui/material";
 
-interface PokemonAvatar {
+interface IPokemonAvatar {
     pokemon: DetailPokemon
 }
 
-const PokemonAvatar = ({pokemon}: PokemonAvatar) => {
+const PokemonAvatar = ({pokemon}: IPokemonAvatar) => {
 
     return (
         <Card sx={{backgroundColor: pokemon.color, padding: '10px'}}>
