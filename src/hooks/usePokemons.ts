@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
-import {IndexedPokemon, ListPokemon, PokemonListResponce} from "../interfaces/pokemon.interfaces";
-import {POKEMON_API_POKEMON_URL, POKEMON_IMG_BASE_URL} from "../constants";
+import {IndexedPokemon, IndexedType, ListPokemon, PokemonListResponce, PokemonByTypeListResponce} from "../interfaces/pokemon.interfaces";
+import {POKEMON_API_POKEMON_URL, POKEMON_IMG_BASE_URL, POKEMON_TYPES} from "../constants";
 import {httpClient} from "../api/httpClient";
 
 const usePokemons = () => {
     const [pokemons, setPokemons] = useState<ListPokemon[]>([])
     const [nextUrl, setNextUrl] = useState<string | null>(POKEMON_API_POKEMON_URL)
+
+    const [selectedType, setSelectedType] = useState<IndexedType | null>(null)
 
     const fetchPokemon = async () => {
         if (nextUrl) {
@@ -31,13 +33,32 @@ const usePokemons = () => {
     }
 
     useEffect( () => {
-        fetchPokemon()
-    }, [])
+        if (selectedType) {
+            fetchPokemonsByType()
+        } else {
+            fetchPokemon();
+        }
+    }, [selectedType])
+
+    const fetchPokemonsByType = async () => {
+        if (selectedType) {
+            const result = await httpClient.get<PokemonByTypeListResponce>(selectedType.url);
+            if (result?.data?.pokemon) {
+                const listPokemons = result.data.pokemon.map(p => indxPokemonToListPokemon(p.pokemon))
+                setPokemons(listPokemons);
+                setNextUrl(POKEMON_API_POKEMON_URL);
+            }
+        }
+    }
 
     return {
         pokemons,
         fetchNextPage: fetchPokemon,
-        hasMorePokemon: !! nextUrl
+        hasMorePokemon: !! nextUrl,
+        pokemonTypes: POKEMON_TYPES,
+        selectedType,
+        setSelectedType,
+        setPokemons
     }
 }
 

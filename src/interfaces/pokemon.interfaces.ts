@@ -10,6 +10,16 @@ export interface PokemonListResponce {
     results: IndexedPokemon[]
 }
 
+export interface IndexedPokemonByType {
+    pokemon: IndexedPokemon;
+    slot: string;
+}
+
+export interface PokemonByTypeListResponce {
+    id: number;
+    pokemon: IndexedPokemonByType[];
+}
+
 export interface ListPokemon {
     name: string
     url: string
@@ -58,4 +68,10 @@ export interface DetailPokemon {
     }
     stats: PokemonStat[];
     color: string | null;
+}
+
+export interface IndexedType {
+    name: string;
+    url: string;
+    color: string;
 }
