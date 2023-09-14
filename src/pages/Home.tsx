@@ -4,7 +4,7 @@ import {Box, Button, Container, Grid, Typography} from "@mui/material";
 import {IndexedType} from "../interfaces/pokemon.interfaces";
 
 const Home = () => {
-    const {pokemons, hasMorePokemon, fetchNextPage, pokemonTypes, selectedType, setPokemons, setSelectedType} = usePokemons()
+    const {pokemons, hasMorePokemon, fetchNextPage, pokemonTypes, setPokemons, setSelectedType} = usePokemons()
 
     const handleSelectType = (type: IndexedType | null) => {
         if (type) {

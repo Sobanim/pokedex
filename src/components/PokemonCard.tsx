@@ -12,6 +12,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     const [pokemonColor, setPokemonColor] = useState<string | null>(null)
 
     const getPokemonColor = async () => {
+        // const color = await getColorFromUrl(pokemon.image)
         const color = await getColorFromUrl(pokemon.image)
         if (color) setPokemonColor(color)
     }
