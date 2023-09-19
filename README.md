@@ -1,5 +1,5 @@
 # Pokédex
-This is my pet project - Pokedex. The project uses the free API pokeapi.co. 
+This is my pet project - Pokédex. The project uses the free API pokeapi.co. 
 In this project I used the following technologies:
 
 ![Typescript](https://img.icons8.com/color/48/typescript.png)
@@ -8,6 +8,8 @@ In this project I used the following technologies:
 ![Axios](https://axios-http.com/assets/logo.svg)
 
 ### [Click and view the Pokédex](https://pokedex-flame-ten.vercel.app/)
+
+Also I use _fast-average-color_ library for generating background color for pokemons.
 
 -------------------------------------------------------
 
