@@ -1,3 +1,14 @@
+# Pokedex
+This is my pet project - Pokedex. The project uses the free API pokeapi.co. 
+In this project I used the following technologies:
+
+![Typescript](https://img.icons8.com/color/48/typescript.png)
+![React](https://img.icons8.com/plasticine/46/react.png)
+![Materia UI](https://img.icons8.com/color/48/material-ui.png)
+![Axios](https://axios-http.com/assets/logo.svg)
+
+-------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
