@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <Container>
             <Typography className={'text-stroke3'} variant={'h1'} component={'h1'} sx={{color: '#f4dc26'}}>
-                Pokedex
+                Pokédex
             </Typography>
 
             <Grid container spacing={2} mt={1}>
