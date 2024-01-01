@@ -6,6 +6,7 @@ import './styles/App.css'
 import PokemonDetail from "./components/PokemonDetail";
 import Link from "@mui/material/Link";
 import {useMemo} from "react";
+import themeProps from "./utils/theme";
 
 
 const router = createBrowserRouter([
@@ -23,28 +24,11 @@ const App = () => {
 
     const theme = useMemo(() =>
         createTheme({
-            typography: {
-                fontFamily: 'Pokemon Solid',
-                h1: {
-                    lineHeight: 1.1,
-                    marginBottom: '30px',
-                    letterSpacing: '3px',
-                    textAlign: 'center'
-                }
-            },
-            components: {
-                MuiButtonBase: {
-                    defaultProps: {
-                        sx: {
-                            letterSpacing: '3px',
-                            textTransform: 'lowercase'
-                        }
-                    }
-                }
-            },
+            ...themeProps,
+            // TODO - Fix text color
             palette: {
                 mode: prefersDarkMode ? 'dark' : 'light'
-            }
+            },
         }), [prefersDarkMode])
 
   return (

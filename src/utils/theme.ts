@@ -1,6 +1,6 @@
-import {createTheme} from "@mui/material";
+import {ThemeOptions} from "@mui/material";
 
-const theme = createTheme({
+const themeProps: ThemeOptions = {
     typography: {
         fontFamily: 'Pokemon Solid',
         h1: {
@@ -19,10 +19,7 @@ const theme = createTheme({
                 }
             }
         }
-    },
-    // palette: {
-    //     mode: "dark"
-    // }
-})
+    }
+}
 
-export default theme;
+export default themeProps;
