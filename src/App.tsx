@@ -1,10 +1,11 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
-import {Box, Container, CssBaseline, ThemeProvider, Typography} from "@mui/material";
-import theme from "./utils/theme";
+import {Box, Container, createTheme, CssBaseline, ThemeProvider, Typography, useMediaQuery} from "@mui/material";
+// import theme from "./utils/theme";
 import './styles/App.css'
 import PokemonDetail from "./components/PokemonDetail";
 import Link from "@mui/material/Link";
+import {useMemo} from "react";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,35 @@ const router = createBrowserRouter([
     }
 ])
 const App = () => {
+
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+    const theme = useMemo(() =>
+        createTheme({
+            typography: {
+                fontFamily: 'Pokemon Solid',
+                h1: {
+                    lineHeight: 1.1,
+                    marginBottom: '30px',
+                    letterSpacing: '3px',
+                    textAlign: 'center'
+                }
+            },
+            components: {
+                MuiButtonBase: {
+                    defaultProps: {
+                        sx: {
+                            letterSpacing: '3px',
+                            textTransform: 'lowercase'
+                        }
+                    }
+                }
+            },
+            palette: {
+                mode: prefersDarkMode ? 'dark' : 'light'
+            }
+        }), [prefersDarkMode])
+
   return (
       <ThemeProvider theme={theme}>
           <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
