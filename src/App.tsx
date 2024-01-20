@@ -1,11 +1,10 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
 import {Box, Container, createTheme, CssBaseline, ThemeProvider, Typography, useMediaQuery} from "@mui/material";
-// import theme from "./utils/theme";
 import './styles/App.css'
 import PokemonDetail from "./components/PokemonDetail";
 import Link from "@mui/material/Link";
-import {FC, useMemo} from "react";
+import {useMemo} from "react";
 import themeProps from "./utils/theme";
 
 
