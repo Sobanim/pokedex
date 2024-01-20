@@ -5,7 +5,7 @@ import {Box, Container, createTheme, CssBaseline, ThemeProvider, Typography, use
 import './styles/App.css'
 import PokemonDetail from "./components/PokemonDetail";
 import Link from "@mui/material/Link";
-import {useMemo} from "react";
+import {FC, useMemo} from "react";
 import themeProps from "./utils/theme";
 
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <PokemonDetail />,
     }
 ])
-const App = () => {
+const App = ():JSX.Element => {
 
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
