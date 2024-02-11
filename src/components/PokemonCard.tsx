@@ -1,6 +1,6 @@
 import {ListPokemon} from '../interfaces/pokemon.interfaces'
 import {Box, Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {getColorFromUrl} from "../utils/colors";
 import {Link} from "react-router-dom";
 
@@ -11,15 +11,15 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
 
     const [pokemonColor, setPokemonColor] = useState<string | null>(null)
 
-    const getPokemonColor = async () => {
+    const getPokemonColor =  useCallback(async () => {
         // const color = await getColorFromUrl(pokemon.image)
         const color = await getColorFromUrl(pokemon.image)
         if (color) setPokemonColor(color)
-    }
+    },[pokemon.image])
 
     useEffect(() => {
         getPokemonColor()
-    }, [])
+    }, [getPokemonColor])
   return (
         <Card sx={{backgroundColor: pokemonColor, width: '100%'}}>
             <CardActionArea>
